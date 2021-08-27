@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="kk">
+      <form action="" onsubmit=" return calc()">
+        <h1>&#128526; Guess the Number between 1 to 100 ! &#128526;</h1>
+        <input id="num" type="number" />
+        <input id="btn" type="submit" value="Check" />
+        <p id="res"></p>
+      </form>
+    </div>
+  </body>
+  <style>
+    body {
+      background-color: rgba(156, 236, 247, 0.705);
+      color: white;
+      font-size: 19px;
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    var guess = Math.floor(Math.random() * 100) + 1;
+    function calc() {
+      if (document.getElementById("num").value == "") {
+        document.getElementById("res").innerHTML =
+          "<h2>Kindly enter a number</h2";
+        return false;
+      }
+      var n = parseInt(document.getElementById("num").value);
+      if (n === guess)
+        document.getElementById("res").innerHTML =
+          "<h2>Super!! You got it.</h2>";
+      else if (n > guess)
+        document.getElementById("res").innerHTML =
+          "<h2>Guess a smaller number</h2>";
+      else
+        document.getElementById("res").innerHTML =
+          "<h2>Guess a greater number</h2>";
+      return false;
+    }
+  </script>
+
+  <style>
+    body {
+      margin: 100px;
+      background-color: rgb(156, 84, 156);
+      color: white;
+    }
+
+    #kk {
+      text-align: center;
+      padding: 150px;
+    }
+
+    input {
+      font-size: 1.4rem;
+      border-radius: 13px;
+      border: 2px solid white;
+    }
+
+    #btn {
+      margin: 5px;
+      background-color: wheat;
+      color: black;
+      font-size: 1.2rem;
+      border-radius: 12px;
+    }
+
+    p {
+      font-size: 1.9rem;
+      font-weight: bold;
+    }
+  </style>
+</html>
